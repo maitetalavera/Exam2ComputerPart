@@ -29,6 +29,18 @@
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+def starter_list(type):
+    type = ["Beach", "Mountain", "Lake"]
+    match type:
+        case "Beach":
+            return "Swimsuit", "towel", "sunscreen"
+        case "Mountain":
+            return "hat", "gloves", "snow pants"
+        case "Lake":
+            return "swimsuit", "sunglasses", "towel"
+        
+starter_list(type="Beach")
+
 ###############################################################################
 # TODO: 2. (4 pts)
 #
