@@ -2,7 +2,7 @@
 # print back steps at the end
 
 ###############################################################################
-# TODO: 1. (5 pts)
+# DONE: 1. (5 pts)
 #
 #   In this module, we will be making a tool that allows a user to input the
 #   steps to a recipe. Once the user has entered all the steps, it will print
@@ -31,11 +31,17 @@
 ###############################################################################
 
 def get_step(num): 
-    
+    steps = ""
+    for x in range(num):
+        num1 = input ("Please enter details for step" + str(x+1) + ":")
+        steps += str(x+1) + ') ' + num1 + "\n"
+    return steps
+
+
 
 
 ###############################################################################
-# TODO: 2. (7 pts)
+# DONE: 2. (7 pts)
 #
 #   For this _TODO_, write a function called main() that will start everything
 #   off.
@@ -67,3 +73,20 @@ def get_step(num):
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+
+def main():
+    i=0
+    list_steps = []
+    while True:
+        steps = input("Please enter a step for the recipe.")
+        if steps == "end":
+            break
+        i += 1
+        list_steps.append(steps)
+    for x in range (i):
+        steps = str(x+1) + ') ' + list_steps[x] 
+        print(steps)
+
+main()
+
+    
