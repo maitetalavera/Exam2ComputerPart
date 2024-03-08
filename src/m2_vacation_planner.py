@@ -2,7 +2,7 @@
 #   prints out a packing list for that vacation type
 
 ###############################################################################
-# TODO: 1. (5 pts)
+# DONE: 1. (5 pts)
 #
 #   For this module, we are going to create a vacation planner that will help
 #   the user plan what they need to bring on vacation.
@@ -30,19 +30,19 @@
 ###############################################################################
 
 def starter_list(type):
-    type = ["Beach", "Mountain", "Lake"]
     match type:
         case "Beach":
-            return "Swimsuit", "towel", "sunscreen"
+            return ["Swimsuit", "towel", "sunscreen"]
         case "Mountain":
-            return "hat", "gloves", "snow pants"
+            return ["hat", "gloves", "snow pants"]
         case "Lake":
-            return "swimsuit", "sunglasses", "towel"
-        
-starter_list(type="Beach")
+            return ["swimsuit", "sunglasses", "towel"]
+        case _:
+            return []
+
 
 ###############################################################################
-# TODO: 2. (4 pts)
+# DONE: 2. (4 pts)
 #
 #   Now, perhaps the user would like to bring some of their own stuff that they
 #   specify.
@@ -61,8 +61,19 @@ starter_list(type="Beach")
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+def gather_items():
+    item_list = []
+    while True:
+        item = input("Please enter an item: ")
+        if item == "end":
+            break
+        item_list.append(item)
+    return item_list
+
+
+
 ###############################################################################
-# TODO: 3. (6 pts)
+# DONE: 3. (6 pts)
 #
 #   For this _TODO_, write a function called main() that will start things off.
 #
@@ -88,3 +99,16 @@ starter_list(type="Beach")
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+
+def main(): 
+    print("Hello!")
+    type= input("Please enter a vacation type: ")
+    sl = starter_list (type) 
+    for x in sl:
+        print(x)
+    sl += gather_items()
+    for x in sl:
+        print(x)
+    print("Goodbye!")
+
+main()
