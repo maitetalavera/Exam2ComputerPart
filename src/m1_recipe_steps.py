@@ -32,11 +32,9 @@
 
 def get_step(num): 
     steps = ""
-    for x in range(num):
-        num1 = input ("Please enter details for step" + str(x+1) + ":")
-        steps += str(x+1) + ') ' + num1 + "\n"
+    num1 = input ("Please enter details for step " + str(num) + ":")
+    steps += str(num) + ') ' + num1 
     return steps
-
 
 
 
@@ -75,17 +73,16 @@ def get_step(num):
 ###############################################################################
 
 def main():
-    i=0
+    i=1
     list_steps = []
     while True:
-        steps = input("Please enter a step for the recipe.")
-        if steps == "end":
+        steps = get_step(i)
+        if "end" in steps:
             break
         i += 1
         list_steps.append(steps)
-    for x in range (i):
-        steps = str(x+1) + ') ' + list_steps[x] 
-        print(steps)
+    for x in (list_steps): 
+        print(x)
 
 main()
 
