@@ -33,7 +33,7 @@ def get_toy():
 
 def get_price():
     price = input("Please enter a price: ")
-    return (price)
+    return price
 
 ###############################################################################
 # DONE: 3. (5 pts)
@@ -53,7 +53,7 @@ def get_price():
 ###############################################################################
 
 def toy_price(toy, price):
-    tp=(toy, price)
+    tp=(toy, float(price))
     return tp
 
 
@@ -115,11 +115,11 @@ def main():
     while True:
         toy= get_toy()
         price= get_price()
-        toy_tuple= toy_price(toy, price)
         if toy == "end":
             break
         if price == "end":
             break
+        toy_tuple= toy_price(toy, price)
         list_toys.append(toy_tuple)
     total=calculate_total_price(list_toys)
     for x in list_toys:
