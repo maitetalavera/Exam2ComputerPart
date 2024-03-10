@@ -33,7 +33,7 @@ def get_toy():
 
 def get_price():
     price = input("Please enter a price: ")
-    return float(price)
+    return (price)
 
 ###############################################################################
 # DONE: 3. (5 pts)
@@ -53,7 +53,7 @@ def get_price():
 ###############################################################################
 
 def toy_price(toy, price):
-    tp=(toy, float(price))
+    tp=(toy, price)
     return tp
 
 
